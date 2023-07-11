@@ -6,7 +6,7 @@ sleep 2
 
 echo This script will break yo sheet. good luck.
 
-echo hey also unless the password gets changed to something custom (which will be noted), the password is ZkJ%Dw2*9KpNr5*pNc
+echo hey also unless the password gets changed to something custom which will be noted, the password is ZkJ%Dw2*9KpNr5*pNc
 
 startTime=$(date +"%s")
 printTime()
