@@ -8,5 +8,8 @@ That just moved you to the Downloads folder
 ```
 sudo chmod +x poop.sh
 ```
-
-    sudo ./poop.sh
+That makes the script executable
+```
+sudo ./poop.sh
+```
+That one runs the script. Make backups and be prepared to have to start over. Good luck.
