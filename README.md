@@ -3,5 +3,10 @@ ok this is how you run this file. first download the file titled poop.sh then fo
 
 ```
  sudo cd Downloads
-    sudo chmod +x poop.sh
+```
+That just moved you to the Downloads folder
+```
+sudo chmod +x poop.sh
+```
+
     sudo ./poop.sh
