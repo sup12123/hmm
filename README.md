@@ -2,6 +2,10 @@
 ok this is how you run this file. first download the file titled poop.sh then follow these steps: 
 
 ```
+wget https://github.com/72cdd932-8959-4772-a47e-76974cf158b9
+```
+
+```
  sudo cd Downloads
 ```
 That just moved you to the Downloads folder
