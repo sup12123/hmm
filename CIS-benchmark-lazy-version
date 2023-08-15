@@ -43,6 +43,20 @@ df --local -P | awk {'if (NR!=1) print $6'} | xargs -I '{}' find '{}' -xdev -typ
 
 systemctl disable autofs
 
-#Section numero two-o: updateo
-#2.
+#Section numero threeo. Skipped two because it deals with Apt and other updates.
+
+#1.3.1 file integrity stuff
+
+apt-get install aide aide-common
+
+aideinit
+
+#1.3.2 edit cron to automate checking
+
+echo "0 5 * * * /usr/bin/aide.wrapper --config /etc/aide/aide.conf --check" >> crontab -u root -e
+
+#1.3.3
+
+chown root:root /boot/grub/grub.cfg
+chmod og-rwx /boot/grub/grub.cfg
 
