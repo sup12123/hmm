@@ -1,0 +1,40 @@
+#!/bin/bash
+
+#1.1.1 disable mounting of uncommon filesystems.
+
+install freevxfs /bin/true
+rmmod freevxfs
+
+install jffs2 /bin/true
+rmmod jffs2
+
+install cramfs /bin/true
+rmmod cramfs
+
+install hfs /bin/true
+rmmod hfs
+
+install hfsplus /bin/true
+rmmod hfsplus
+
+install squashfs /bin/true
+rmmod squashfs
+
+install udf /bin/true
+rmmod udf
+
+#1.1.2, 1.1.3, 1.1.4 ensure /tmp is configured
+
+systemctl unmask tmp.mount
+systemctl enable tmp.mount
+
+echo "[Mount]
+What=tmpfs
+Where=/tmp
+Type=tmpfs Options=mode=1777,strictatime,noexec,nodev,nosuid" >> /etc/systemd/system/local-fs.target.wants/tmp.mount
+
+mount -o remount,nodev /tmp
+
+#1.1.5
+
+
