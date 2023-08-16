@@ -69,4 +69,14 @@ chmod og-rwx /boot/grub/grub.cfg
 prelink -ua
 apt-get remove prelink
 
+#1.6.2.2 configure apparmour and enforce policies
+
+aa-enforce /etc/apparmor.d/*
+
+#1.6.3 ensure apparmor is installed
+
+apt-get install apparmor apparmor-utils
+
 #
+
+
