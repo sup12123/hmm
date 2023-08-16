@@ -64,4 +64,9 @@ chmod og-rwx /boot/grub/grub.cfg
 
 #1.5.1, 1.5.3 test this on ubu 18.04 and deb 10
 
+#1.5.4 removing prelink
+
+prelink -ua
+apt-get remove prelink
+
 #
