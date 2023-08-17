@@ -90,6 +90,11 @@ echo "Authorized uses only. All activity may be monitored and reported." > /etc/
 chown root:root /etc/motd
 chmod 644 /etc/motd
 
+#Configure Sudo
+
+echo "Defaults use_pty" >> /etc/sudoers
+echo "Defaults logfile="/var/log/sudo.log"" >> /etc/sudoers
+
 #
 
 
