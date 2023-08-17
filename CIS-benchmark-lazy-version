@@ -67,7 +67,7 @@ chmod og-rwx /boot/grub/grub.cfg
 #1.5.4 removing prelink
 
 prelink -ua
-apt-get remove prelink
+apt-get purge prelink
 
 #1.6.2.2 configure apparmour and enforce policies
 
@@ -94,6 +94,10 @@ chmod 644 /etc/motd
 
 echo "Defaults use_pty" >> /etc/sudoers
 echo "Defaults logfile="/var/log/sudo.log"" >> /etc/sudoers
+
+#so this point i switched to the deb10 version of the CIS. thats why the numbering is a bit rarded
+
+echo "kernel.randomize_va_space = 2" >> /etc/sysctl.d/*
 
 #
 
