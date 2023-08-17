@@ -131,6 +131,10 @@ apt purge xinetd -y
 apt purge openbsd-inetd -y
 apt purge xserver-xorg* -y
 
+#2.2 neutering stoopid services
+
+systemctl --now disable avahi-daemon
+
 
 
 
