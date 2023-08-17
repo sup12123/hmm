@@ -67,7 +67,7 @@ chmod og-rwx /boot/grub/grub.cfg
 #1.5.4 removing prelink
 
 prelink -ua
-apt-get purge prelink
+apt-get purge prelink -y
 
 #1.6.2.2 configure apparmour and enforce policies
 
@@ -75,7 +75,7 @@ aa-enforce /etc/apparmor.d/*
 
 #1.6.3 ensure apparmor is installed
 
-apt-get install apparmor apparmor-utils
+apt-get install apparmor apparmor-utils -y
 
 #1.7.1.2 system warning system
 
@@ -102,6 +102,36 @@ echo "kernel.randomize_va_space = 2" >> /etc/sysctl.d/*
 #hardening memalloc and memdump
 
 echo "* hard core 0" >> /etc/security/limits.d/*
-echo "
+echo "fs.suid_dumpable = 0" >> /etc/sysctl.d/*
+
+sysctl -w fs.suid_dumpable=0
+
+#1.7 screwing with grub
+
+echo "GRUB_CMDLINE_LINUX="apparmor=1 security=apparmor"" >> /etc/default/grub
+
+update-grub
+
+#1.7 uhhh idk apparmour stuff
+
+aa-enforce /etc/apparmor.d/*
+
+#1.8 configuring perms
+
+chown root:root /etc/issue
+chmod u-x,go-wx /etc/issue
+
+chown root:root /etc/issue.net
+chmod u-x,go-wx /etc/issue.net
+
+#section 2
+#killing out rando shi and pkgs
+
+apt purge xinetd -y
+apt purge openbsd-inetd -y
+apt purge xserver-xorg* -y
+
+
+
 
 
