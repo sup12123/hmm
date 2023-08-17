@@ -99,6 +99,9 @@ echo "Defaults logfile="/var/log/sudo.log"" >> /etc/sudoers
 
 echo "kernel.randomize_va_space = 2" >> /etc/sysctl.d/*
 
-#
+#hardening memalloc and memdump
+
+echo "* hard core 0" >> /etc/security/limits.d/*
+echo "
 
 
