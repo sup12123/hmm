@@ -1,3 +1,5 @@
+#!/bin/bash/
+
 #this is the part of the script that kills all the services you need/dont
 
 
