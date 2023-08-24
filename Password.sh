@@ -6,8 +6,7 @@ echo "Please input a universal password. Make it a secure password to gain point
 
 read univ-password
 
-
-echo univ-password >> /home/passworduniv.txt
+echo -e "$univ-password\n$univ-password" >> /home/passworduniv.txt
 
 echo "the universal password has been changed to" cat >> /home/passworduniv.txt
 
